@@ -1,0 +1,1077 @@
+/*
+  solviXone - Premium Dark Blue Theme
+  Inspired by Tailwind CSS Aesthetics
+  Original Base: Softy Pinko by TemplateMo
+*/
+
+/* ---------------------------------------------
+Table of contents
+------------------------------------------------
+01. Root Variables & Reset
+02. Global Styles
+03. Header
+04. Welcome Area (Hero)
+05. Features & Cards
+06. Parallax & Counters
+07. Testimonials
+08. Pricing
+09. Blog
+10. Contact
+11. Footer
+12. Preloader & Utilities
+
+--------------------------------------------- */
+
+/* ---------------------------------------------
+01. Root Variables & Reset
+--------------------------------------------- 
+*/
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
+
+:root {
+  --primary-blue: #3B82F6; /* blue-500 */
+  --primary-blue-hover: #2563EB; /* blue-600 */
+  --background-dark: #0F172A; /* slate-900 */
+  --background-light: #1E293B; /* slate-800 */
+  --border-color: #334155; /* slate-700 */
+  --text-primary: #F1F5F9; /* slate-100 */
+  --text-secondary: #94A3B8; /* slate-400 */
+  --text-headings: #E2E8F0; /* slate-200 */
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--primary-blue);
+}
+
+a:hover {
+    color: var(--primary-blue-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: var(--text-headings);
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+/* ---------------------------------------------
+02. Global Styles
+--------------------------------------------- 
+*/
+::selection {
+  background: var(--primary-blue);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: var(--primary-blue);
+  color: var(--text-primary);
+}
+
+.section {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.section.colored {
+  background-color: var(--background-light);
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  margin-top: 100px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.left-heading .section-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: var(--text-headings);
+  letter-spacing: 0.25px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.center-heading {
+  text-align: center;
+}
+
+.center-heading .section-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--text-headings);
+  letter-spacing: 1px;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+
+.center-text {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  margin-bottom: 50px;
+}
+
+.left-text {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 28px;
+  letter-spacing: 0.5px;
+}
+
+.left-text p {
+  margin-bottom: 30px;
+}
+
+/* --- Utility Classes --- */
+.padding-bottom-top-60{padding-top:60px !important;padding-bottom:60px !important}
+.padding-bottom-80{padding-bottom:80px !important}
+.padding-bottom-100{padding-bottom:100px !important}
+.border-bottom{border-bottom:1px solid var(--border-color) !important}
+.mbottom-30{margin-bottom:30px !important}
+.align-self-center{-ms-flex-item-align:center !important;align-self:center !important}
+.align-self-bottom{-ms-flex-item-align:flex-end !important;align-self:flex-end !important}
+.padding-bottom-0{padding-bottom:0px !important}
+.padding-top-0{padding-top:0px !important}
+.padding-top-80{padding-top:80px !important}
+.padding-top-70{padding-top:70px !important}
+.padding-top-20{padding-top:20px !important}
+.margin-bottom-0{margin-bottom:0px !important}
+.margin-bottom-30{margin-bottom:30px !important}
+.margin-top-30{margin-top:30px !important}
+.margin-top-15{margin-top:15px !important}
+.margin-bottom-45{margin-bottom:45px !important}
+.margin-bottom-20{margin-bottom:20px !important}
+.margin-bottom-60{margin-bottom:60px !important}
+.margin-bottom-100{margin-bottom:100px !important}
+
+@media (max-width: 991px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  .mobile-top-fix { margin-top: 30px; margin-bottom: 0px; }
+  .mobile-bottom-fix { margin-bottom: 30px; }
+  .mobile-bottom-fix-big { margin-bottom: 60px; }
+}
+
+/* --- Buttons --- */
+a.main-button-slider, a.main-button, button.main-button {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 9999px; /* Pill shape */
+  padding: 14px 28px;
+  background-color: var(--primary-blue);
+  text-transform: uppercase;
+  color: #fff !important;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+a.main-button-slider:hover, a.main-button:hover, button.main-button:hover {
+  background-color: var(--primary-blue-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+}
+
+button.main-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------
+03. Header
+--------------------------------------------- 
+*/
+.header-area {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.4s ease;
+}
+
+.header-area .main-nav {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 9999px; /* Pill shape */
+  min-height: 80px;
+  background: rgba(30, 41, 59, 0.7); /* slate-800 with transparency */
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+}
+
+.header-area .main-nav .logo {
+  float: left;
+  margin-top: 25px;
+  margin-left: 30px;
+  transition: all 0.3s ease;
+}
+
+.header-area .main-nav .nav {
+  float: right;
+  margin-top: 20px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.header-area .main-nav .nav li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-area .main-nav .nav li a {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  height: 40px;
+  line-height: 40px;
+  border: transparent;
+  letter-spacing: 0.5px;
+}
+
+.header-area .main-nav .nav li a:hover,
+.header-area .main-nav .nav li a.active {
+  color: var(--primary-blue);
+}
+
+.header-area .main-nav .menu-trigger {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 23px;
+  width: 32px;
+  height: 40px;
+  text-indent: -9999em;
+  z-index: 99;
+  right: 40px;
+}
+
+.header-area .main-nav .menu-trigger span,
+.header-area .main-nav .menu-trigger span:before,
+.header-area .main-nav .menu-trigger span:after {
+  transition: all 0.4s;
+  background-color: var(--text-primary);
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+}
+.header-area .main-nav .menu-trigger span:before,
+.header-area .main-nav .menu-trigger span:after {
+  content: "";
+}
+.header-area .main-nav .menu-trigger span { top: 16px; }
+.header-area .main-nav .menu-trigger span:before { top: -10px; }
+.header-area .main-nav .menu-trigger span:after { top: 10px; }
+
+.header-area .main-nav .menu-trigger.active span { background-color: transparent; }
+.header-area .main-nav .menu-trigger.active span:before { transform: translateY(10px) rotate(45deg); }
+.header-area .main-nav .menu-trigger.active span:after { transform: translateY(-10px) rotate(-45deg); }
+
+.header-area.header-sticky {
+  top: 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.header-area.header-sticky .main-nav {
+    border-radius: 0;
+}
+
+@media (max-width: 991px) {
+  .header-area {
+    padding: 0 15px;
+    top: 0;
+  }
+  .header-area .main-nav {
+    border-radius: 0;
+    background: var(--background-light);
+  }
+  .header-area .logo { margin-top: 20px !important; }
+  .header-area .menu-trigger { display: block !important; }
+  .header-area .main-nav .nav {
+    float: none;
+    width: 100%;
+    margin-top: 80px !important;
+    display: none;
+  }
+  .header-area .main-nav .nav li {
+    width: 100%;
+    background: var(--background-light);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 !important;
+  }
+  .header-area .main-nav .nav li:first-child { border-top: 1px solid var(--border-color); }
+  .header-area .main-nav .nav li a {
+    height: 50px !important;
+    line-height: 50px !important;
+    padding: 0px 20px !important;
+    color: var(--text-primary) !important;
+  }
+  .header-area .main-nav .nav li a:hover,
+  .header-area .main-nav .nav li a.active {
+    background: var(--primary-blue) !important;
+    color: #fff !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-area .main-nav .nav {
+    display: flex !important;
+  }
+}
+
+/* ---------------------------------------------
+04. Welcome Area (Hero)
+--------------------------------------------- 
+*/
+.welcome-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-dark);
+}
+
+.welcome-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/banner-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.1; /* Reduced opacity for a subtle effect */
+    z-index: 1;
+}
+
+.welcome-area .header-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.welcome-area .header-text h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: var(--text-headings);
+}
+
+.welcome-area .header-text h1 strong {
+  color: var(--primary-blue);
+}
+
+.welcome-area .header-text p {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 30px;
+  letter-spacing: 0.25px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 991px) {
+  .welcome-area .header-text h1 { font-size: 36px; }
+  .welcome-area .header-text p { font-size: 16px; }
+}
+
+@media (max-width: 765px) {
+  .welcome-area { padding-top: 100px; height: auto; min-height: 100vh; }
+  .welcome-area .header-text h1 { font-size: 28px; }
+  .welcome-area .header-text p { font-size: 15px; }
+}
+
+/* ---------------------------------------------
+05. Features & Cards
+--------------------------------------------- 
+*/
+.home-feature {
+  padding-bottom: 0px;
+  padding-top: 30px;
+  margin-top: -120px;
+  position: relative;
+  z-index: 9;
+}
+
+@media (max-width: 991px) {
+  .home-feature { margin-top: 0; padding-top: 100px; }
+}
+
+.features-small-item {
+  display: block;
+  background: var(--background-light);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.features-small-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-blue);
+}
+
+.features-small-item .icon {
+  transition: all 0.3s ease;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  margin: auto;
+  margin-bottom: 30px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+}
+
+.features-small-item .icon img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.features-small-item .features-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-headings);
+  margin-bottom: 15px;
+}
+
+.features-small-item p {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  line-height: 25px;
+}
+
+/* ---------------------------------------------
+06. Parallax & Counters
+--------------------------------------------- 
+*/
+.mini {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-light);
+}
+
+.mini .info {
+  text-align: center;
+}
+
+.mini .info h1 {
+  color: var(--text-headings);
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.mini .info p {
+  letter-spacing: 0.5px;
+  margin-bottom: 40px;
+  color: var(--text-secondary);
+  line-height: 26px;
+  font-size: 16px;
+}
+
+.mini .mini-box {
+  display: block;
+  background: var(--background-dark);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.mini .mini-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-blue);
+}
+
+.mini .mini-box i, .mini .mini-box img {
+  display: block;
+  margin: 0 auto 15px auto;
+  max-height: 40px;
+}
+
+.mini .mini-box strong {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-headings);
+  margin-bottom: 5px;
+}
+
+.mini .mini-box span {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.counter {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary-blue);
+}
+
+.counter .content .count-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.counter .content .count-item strong {
+  display: block;
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.counter .content .count-item span {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* ---------------------------------------------
+07. Testimonials
+--------------------------------------------- 
+*/
+.team-item {
+  background: var(--background-light);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.team-item .team-content p {
+  margin-bottom: 25px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 26px;
+  font-style: italic;
+}
+
+.team-item .user-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
+
+.team-item .team-content .team-info {
+  overflow: hidden;
+  padding-top: 5px;
+}
+
+.team-item .team-content .team-info .user-name {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text-headings);
+  margin-bottom: 5px;
+}
+
+.team-item .team-content .team-info span {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--primary-blue);
+}
+
+/* ---------------------------------------------
+08. Pricing
+--------------------------------------------- 
+*/
+.pricing-item {
+  background: var(--background-light);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  margin-bottom: 30px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.pricing-item:hover, .pricing-item.active {
+    transform: translateY(-8px);
+    border-color: var(--primary-blue);
+}
+
+.pricing-item .pricing-header h3 {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-headings);
+  margin-bottom: 25px;
+}
+
+.pricing-item .pricing-body .price-wrapper {
+  padding: 20px 0;
+  background: var(--background-dark);
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.pricing-item.active .pricing-body .price-wrapper {
+    background: var(--primary-blue);
+}
+
+.pricing-item .pricing-body .price-wrapper .currency {
+  font-weight: 600;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.pricing-item .pricing-body .price-wrapper .price {
+  font-weight: 700;
+  font-size: 36px;
+  vertical-align: middle;
+}
+
+.pricing-item .pricing-body .price-wrapper .period {
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+  color: var(--text-secondary);
+}
+.pricing-item.active .pricing-body .price-wrapper .period {
+    color: rgba(255,255,255,0.8);
+}
+
+.pricing-item .pricing-body .list {
+  text-align: left;
+  max-width: 200px;
+  margin: 0 auto 30px auto;
+}
+
+.pricing-item .pricing-body .list li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.pricing-item .pricing-body .list li.active {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.pricing-item .pricing-body .list li::before {
+    content: '\f00c'; /* Check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--primary-blue);
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.pricing-item .pricing-body .list li:not(.active) {
+    text-decoration: line-through;
+    color: #64748B; /* slate-500 */
+}
+.pricing-item .pricing-body .list li:not(.active)::before {
+    content: '\f00d'; /* X icon */
+    color: #64748B;
+}
+
+.pricing-item .pricing-footer {
+  margin-top: 20px;
+}
+
+/* ---------------------------------------------
+09. Blog
+--------------------------------------------- 
+*/
+.blog-post-thumb {
+  background: var(--background-light);
+  border-radius: 16px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.blog-post-thumb .img {
+  height: 220px;
+}
+
+.blog-post-thumb .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-post-thumb .blog-content {
+  padding: 25px;
+}
+
+.blog-post-thumb h3 {
+  margin-bottom: 15px !important;
+}
+
+.blog-post-thumb h3 a {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-headings);
+  line-height: 28px;
+  transition: all 0.3s ease;
+}
+
+.blog-post-thumb h3 a:hover {
+  color: var(--primary-blue);
+}
+
+.blog-post-thumb .text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------
+10. Contact
+--------------------------------------------- 
+*/
+#contact-us h5 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-headings);
+  margin-bottom: 15px;
+}
+
+.contact-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 26px;
+}
+
+.contact-text p {
+  margin-bottom: 28px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  color: var(--text-primary);
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-light);
+  width: 100%;
+  height: 50px;
+  outline: none;
+  padding: 0 20px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: none;
+  padding: 20px;
+}
+
+/* ---------------------------------------------
+11. Footer
+--------------------------------------------- 
+*/
+footer {
+  background-color: var(--background-light);
+  padding-top: 40px;
+}
+
+footer .social {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer .social li {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+footer .social li a {
+  color: var(--text-secondary);
+  text-align: center;
+  background-color: var(--border-color);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+footer .social li a:hover {
+  background-color: var(--primary-blue);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+footer .copyright {
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  margin-top: 30px;
+  padding: 30px 0;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------
+12. Preloader & Utilities
+--------------------------------------------- 
+*/
+#preloader {
+  overflow: hidden;
+  background-color: var(--background-dark);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 9999;
+}
+
+#preloader .jumper {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+#preloader .jumper > div {
+  background-color: var(--primary-blue);
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  animation-fill-mode: both;
+  position: absolute;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  animation: jumper 1s 0s linear infinite;
+}
+
+#preloader .jumper > div:nth-child(2) { animation-delay: 0.33333s; }
+#preloader .jumper > div:nth-child(3) { animation-delay: 0.66666s; }
+
+@keyframes jumper {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/* =========================================================
+   STYLE UNTUK TOMBOL AKSI CEPAT (FLOATING ACTION BUTTONS)
+   ========================================================= */
+
+/* Style dasar untuk semua tombol floating */
+.floating-btn {
+    position: fixed;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) translateY(-2px);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Posisi dan warna spesifik untuk setiap tombol */
+
+/* 1. Tombol Kembali ke Atas (Paling Bawah) */
+.back-to-top {
+    display: none; /* Diatur oleh JavaScript untuk muncul saat scroll */
+    bottom: 30px;
+    background: #64748B; /* Warna netral - slate-500 */
+}
+.back-to-top:hover {
+    background: #475569; /* slate-600 */
+}
+
+/* 2. Tombol WhatsApp (Tengah) */
+.whatsapp-button {
+    bottom: 90px; /* 30px (posisi awal) + 50px (tinggi tombol) + 10px (jarak) */
+    background: #25D366; /* Warna resmi WhatsApp */
+}
+.whatsapp-button:hover {
+    background: #128C7E;
+}
+
+/* 3. Tombol Website (Paling Atas) */
+.website-button {
+    bottom: 150px; /* 90px (posisi WhatsApp) + 50px (tinggi tombol) + 10px (jarak) */
+    background: var(--primary-blue); /* Menggunakan warna tema utama Anda */
+}
+.website-button:hover {
+    background: var(--primary-blue-hover);
+}
+
+/* =============================================
+   STYLE UNTUK ANIMASI LOGO SPONSOR BERGERAK
+   ============================================= */
+
+.logo-scroller {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    /* Efek 'fade' di sisi kiri dan kanan scroller */
+    -webkit-mask-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 10%, hsl(0 0% 0% / 1) 90%, hsl(0 0% 0% / 0));
+    mask-image: linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 10%, hsl(0 0% 0% / 1) 90%, hsl(0 0% 0% / 0));
+}
+
+.scroller__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem; /* Jarak antar logo */
+    /* Animasi akan ditambahkan oleh JavaScript */
+}
+
+.scroller__inner img {
+    height: 60px; /* Menyamakan tinggi semua logo */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.6); /* Efek grayscale dan sedikit transparan */
+    transition: all 0.3s ease;
+}
+
+/* Efek saat kursor mouse menyentuh logo */
+.scroller__inner img:hover {
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.1);
+}
+
+/* Animasi scroll horizontal */
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 1rem)); /* Setengah dari lebar total */
+    }
+}
+
+/* Mengatur play-state animasi */
+.logo-scroller:hover .scroller__inner {
+    animation-play-state: paused;
+}
+
+
